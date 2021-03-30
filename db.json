@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "text": "Meeting at home",
+      "day": "Monday",
+      "reminder": true,
+      "id": 4
+    },
+    {
+      "text": "Meeting at workspace",
+      "day": "Tomorrow",
+      "reminder": true,
+      "id": 5
+    },
+    {
+      "text": "Work From Home",
+      "day": "Next Month",
+      "reminder": true,
+      "id": 6
+    },
+    {
+      "text": "Work at office",
+      "day": "Tomorrow",
+      "reminder": false,
+      "id": 7
+    }
+  ]
+}
