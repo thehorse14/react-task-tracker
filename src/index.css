@@ -10,14 +10,32 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   max-width: 500px;
-  margin: 30px auto;
   overflow: auto;
+  margin: 30px auto;
   min-height: 300px;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
+}
+
+.flex-container {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
@@ -25,6 +43,11 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  width: 100%;
+}
+
+.header h1 {
+  text-align: center;
 }
 
 .btn {
@@ -41,8 +64,24 @@ body {
   font-family: inherit;
 }
 
+.btn-right {
+  float: right;
+}
+
 .btn:focus {
   outline: none;
+}
+
+.btn:hover {
+  opacity: 0.75;
+}
+
+.btn-icon {
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  opacity: 0.75;
 }
 
 .btn:active {
@@ -59,6 +98,7 @@ body {
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  width: 100%;
 }
 
 .task.reminder {
@@ -76,6 +116,7 @@ body {
 }
 
 .add-form {
+  width: 100%;
   margin-bottom: 40px;
 }
 
@@ -113,4 +154,8 @@ body {
 footer {
   margin-top: 30px;
   text-align: center;
+}
+
+.margin-small {
+  margin: 1em;
 }
