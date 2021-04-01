@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import "react-datetime/css/react-datetime.css";
+import Datetime from 'react-datetime';
 
 const AddTask = ({ onAdd }) => {
     const [text, setText] = useState('')
@@ -12,7 +14,7 @@ const AddTask = ({ onAdd }) => {
             alert('Please add a task')
             return
         }
-
+        
         onAdd({ text, day, reminder });
         resetForm()
     }
@@ -33,9 +35,7 @@ const AddTask = ({ onAdd }) => {
             </div>
             <div className='form-control'>
                 <label>Day & Time</label>
-                <input type='text' placeholder='Add Day & Time'
-                value={day} onChange={(e) => setDay(e.target.value)}>
-                </input>
+                <Datetime value={day} onChange={(e) => setDay(e.valueOf())} />
             </div>
             <div className='form-control form-control-check'>
                 <label>Set Reminder</label>
