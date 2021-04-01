@@ -159,3 +159,7 @@ footer {
 .margin-small {
   margin: 1em;
 }
+
+.about {
+  text-align: center;
+}
