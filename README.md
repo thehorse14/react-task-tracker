@@ -2,7 +2,7 @@
 A React application that is used to track tasks. <del>[Json server](https://github.com/typicode/json-server) is used as the mock server.</del> Firebase is used for the authentication and database.
 > This project is a simple project to understand how React's hooks work
 
-![Showcase](./img/showcase.gif)
+![Showcase](./img/showcase2.gif)
 
 ## How to run 
 
