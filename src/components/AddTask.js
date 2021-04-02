@@ -4,7 +4,7 @@ import Datetime from 'react-datetime';
 
 const AddTask = ({ onAdd }) => {
     const [text, setText] = useState('')
-    const [day, setDay] = useState('')
+    const [day, setDay] = useState(new Date())
     const [reminder, setReminder] = useState(false)
 
     const onSubmit = (e) => {
@@ -20,9 +20,9 @@ const AddTask = ({ onAdd }) => {
     }
 
     const resetForm = () => {
-        setText('')
-        setDay('')
-        setReminder(false)
+          setText('')
+          setDay(new Date())
+          setReminder(false)
     }
 
     return (
