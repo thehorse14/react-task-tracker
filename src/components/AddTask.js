@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import "react-datetime/css/react-datetime.css";
-import Datetime from 'react-datetime';
+import { useState } from 'react'
+import DateTimePicker from 'react-datetime-picker'
 
 const AddTask = ({ onAdd }) => {
     const [text, setText] = useState('')
@@ -35,7 +34,7 @@ const AddTask = ({ onAdd }) => {
             </div>
             <div className='form-control'>
                 <label>Day & Time</label>
-                <Datetime value={day} onChange={(e) => setDay(e.valueOf())} />
+                <DateTimePicker className='datetime' value={day} onChange={setDay} />
             </div>
             <div className='form-control form-control-check'>
                 <label>Set Reminder</label>
