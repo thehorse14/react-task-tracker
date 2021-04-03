@@ -6,7 +6,7 @@ import AddTask from './components/AddTask'
 import Firebase from './components/Firebase'
 import SignIn from './components/SignIn'
 import SignOut from './components/SignOut'
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
