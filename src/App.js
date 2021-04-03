@@ -51,29 +51,38 @@ const App = () => {
 
   const addTask = async (task) => {
     task.userId = user.uid;
-    const data = await firestore.collection('tasks').add(task)
-
-    const addedTask = {...task, id: data.id}
-    setTasks([...tasks, addedTask])
+    try {
+      const data = await firestore.collection('tasks').add(task)
+      const addedTask = {...task, id: data.id}
+      setTasks([...tasks, addedTask])
+    } catch {
+      return alert('Something went wrong, please try again');
+    }
   }
 
   const deleteTask = async (id) => {
-    await firestore.collection('tasks').doc(id).delete();
-
-    setTasks(tasks.filter((task) => task.id !== id))
+    try {
+      await firestore.collection('tasks').doc(id).delete();
+      setTasks(tasks.filter((task) => task.id !== id))
+    } catch {
+      return alert('Something went wrong, please try again');
+    }
   }
 
   const toggleReminder = async (id) => {
-    const taskToToggle = await fetchTask(id)
-    const updatedReminder = !taskToToggle.reminder
-    const update = await firestore.collection('tasks').doc(id).update({
-        reminder: updatedReminder
-    })
-
-    
-    setTasks(tasks.map(
-      (task) =>  task.id === id ? {...task, reminder: updatedReminder} : task)
-    )
+    try {
+      let taskToToggle = await fetchTask(id)
+      const updatedReminder = !taskToToggle.reminder
+      await firestore.collection('tasks').doc(id).update({
+          reminder: updatedReminder
+      })
+      setTasks(tasks.map(
+        (task) =>  task.id === id ? {...task, reminder: updatedReminder} : task)
+      )
+    }
+    catch {
+      return alert('Something went wrong, please try again');
+    }
   }
 
   return (
