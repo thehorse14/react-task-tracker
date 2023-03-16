@@ -21,7 +21,13 @@ const App = () => {
   useEffect(() => {
     const getTasks = async () => {
       const tasksFromServer = user ? await fetchTasks(user) : [];
-      setTasks(tasksFromServer)
+      let modifiedTasks = tasksFromServer.map(obj => {
+        return {
+          ...obj,
+          day: obj.day.seconds * 1000
+        };
+      });
+      setTasks(modifiedTasks)
     }
 
     getTasks()
